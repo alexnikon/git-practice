@@ -1,3 +1,5 @@
 hello DevOps
 Updated main
 Some uncommitted change
+new string for conflict
+this text for conflict
