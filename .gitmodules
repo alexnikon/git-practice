@@ -1,0 +1,3 @@
+[submodule "external-module"]
+	path = external-module
+	url = https://github.com/alexnikon/git-practice.git
