@@ -1,0 +1,28 @@
+name: Git Practice CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+  pull_request:
+
+jobs:
+  check-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show current branch
+        run: echo "Branch name: ${{ github.ref_name }}"
+
+      - name: Check for 'SECRET' words
+        run: |
+          if grep -r "SECRET" .; then
+            echo "❌ SECRET found!"
+            exit 1
+          else
+            echo "✅ No secret found"
+          fi
