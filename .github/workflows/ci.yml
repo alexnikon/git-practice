@@ -16,9 +16,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Show current branch
-        run: echo "Branch name: ${{ github.ref_name }}"
+        run: echo "Branch: ${{ github.ref_name }}"
 
-      - name: Check for 'SECRET' words
+      - name: Check for SECRET
         run: |
           if grep -r "SECRET" .; then
             echo "❌ SECRET found!"
@@ -26,3 +26,4 @@ jobs:
           else
             echo "✅ No secret found"
           fi
+
